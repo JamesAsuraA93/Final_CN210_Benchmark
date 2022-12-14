@@ -24,7 +24,7 @@ def run():
     del a
 
     endTimeMBCounter = time.time()
-    score = (size / (endTimeMBCounter - startTimeMBCounter)) / 1000
+    score = ((size * 2) / (endTimeMBCounter - startTimeMBCounter)) / 1000
     sec_use = endTimeMBCounter - startTimeMBCounter
 
-    return dict(sec=format(sec_use, ".2f"), score=int(score))
+    return dict(sec=float(format(sec_use, ".2f")), score=int(score))

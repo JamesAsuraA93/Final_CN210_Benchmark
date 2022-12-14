@@ -21,4 +21,4 @@ def run():
     sec_use = endTimeMBCounter - startTimeMBCounter
 
     score = (size / sec_use) / 1000
-    return dict(sec=format(sec_use, ".2f"), score=int(score))
+    return dict(sec=float(format(sec_use, ".2f")), score=int(score))

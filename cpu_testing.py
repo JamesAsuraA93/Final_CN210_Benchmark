@@ -43,4 +43,4 @@ def run():
     endTimeMBCounter = time.time()
     sec_use = endTimeMBCounter - startTimeMBCounter
     score = ((loop * 2 + matrix_size * 3) / sec_use) / 1000
-    return dict(sec=format(sec_use, ".2f"), score=int(score))
+    return dict(sec=float(format(sec_use, ".2f")), score=int(score))

@@ -1,34 +1,41 @@
 from tkinter import *
 import cpu_testing, memory_testing, disk_testing
-from tkinter import ttk
+
 
 root = Tk()
 root.title("Tyschu Benchmark")
+
 
 # text
 ex = Label(text="CN210 Tyschu Benchmark", font="Helvetica 18 bold")
 ex.grid(row=0, column=0, pady=15, columnspan=5)
 
 
+def storage_all(one,two,three):
+    return
+
 # Disk Test
 def disk_ex():
     disk_out.delete(0, END)
     val = disk_testing.run()
-    disk_out.insert(0, f"second = {val['sec']}, score = {val['score']}")
+    disk_out.insert(0, f"second = {val['sec']}, score = {(val['score']):,}")
+    return val
 
 
 # Mem Test
 def mem_ex():
     mem_out.delete(0, END)
     val = memory_testing.run()
-    mem_out.insert(0, f"second = {val['sec']}, score = {val['score']}")
+    mem_out.insert(0, f"second = {val['sec']}, score = {(val['score']):,}")
+    return val
 
 
 # CPU Test
 def cpu_ex():
     cpu_out.delete(0, END)
     val = cpu_testing.run()
-    cpu_out.insert(0, f"second = {val['sec']}, score = {val['score']}")
+    cpu_out.insert(0, f"second = {val['sec']}, score = {(val['score']):,}")
+    return val
 
 
 # All Test
@@ -37,16 +44,11 @@ def all_ex():
     mem_out.delete(0, END)
     cpu_out.delete(0, END)
     all_out.delete(0, END)
-    result = "2"
+    one = disk_ex()
+    two = mem_ex()
+    three = cpu_ex()
+    result = f"second = {(one['sec']+two['sec']+three['sec']):.2f}, score = {(one['score']+two['score']+three['score']):,}"
     all_out.insert(0, result)
-
-
-# syn result
-def seeAll_result():
-    # disk_execute() # disk
-    mem_ex()  # mem
-    cpu_ex()  # cpu
-    all_ex()  # all
 
 
 # Clear all result
