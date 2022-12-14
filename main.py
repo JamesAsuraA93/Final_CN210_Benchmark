@@ -1,18 +1,17 @@
 from tkinter import *
 import cpu_testing, memory_testing, disk_testing
 
-
 root = Tk()
 root.title("Tyschu Benchmark")
-
 
 # text
 ex = Label(text="CN210 Tyschu Benchmark", font="Helvetica 18 bold")
 ex.grid(row=0, column=0, pady=15, columnspan=5)
 
 
-def storage_all(one,two,three):
+def storage_all(one, two, three):
     return
+
 
 # Disk Test
 def disk_ex():
@@ -47,7 +46,7 @@ def all_ex():
     one = disk_ex()
     two = mem_ex()
     three = cpu_ex()
-    result = f"second = {(one['sec']+two['sec']+three['sec']):.2f}, score = {(one['score']+two['score']+three['score']):,}"
+    result = f"second = {(one['sec'] + two['sec'] + three['sec']):.2f}, score = {(one['score'] + two['score'] + three['score']):,}"
     all_out.insert(0, result)
 
 

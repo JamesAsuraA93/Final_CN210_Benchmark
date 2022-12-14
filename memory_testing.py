@@ -4,7 +4,7 @@ import time
 def run():
     a = []
     startTimeMBCounter = time.time()
-    size = 1073741824 * 2
+    size = 1073741824 * 1
     i = 1
     while a.__sizeof__() < size:
         a.append(i)

@@ -2,7 +2,7 @@ import time
 
 
 def run():
-    loop = 2_000_000_000
+    loop = 1_000_000_000
 
     matrix_size = 100
 
