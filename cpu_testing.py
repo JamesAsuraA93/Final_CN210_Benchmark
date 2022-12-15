@@ -38,7 +38,7 @@ def run():
     for i in range(matrix_size):
         for j in range(matrix_size):
             sumMatrix_A += matrix_A[i][j]
-            sumMatrix_B += matrix_A[i][j]
+            sumMatrix_B += matrix_B[i][j]
 
     endTimeMBCounter = time.time()
     sec_use = endTimeMBCounter - startTimeMBCounter
